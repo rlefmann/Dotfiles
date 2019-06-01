@@ -13,7 +13,7 @@ alias vim=nvim
 
 alias xi="sudo xbps-install"
 alias xq="xbps-query -Rs"
-alias xr="sudo xbps-remove"
+alias xr="sudo xbps-remove -R"
 
 alias sdn="sudo shutdown -P now"
 
