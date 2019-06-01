@@ -8,4 +8,5 @@ First, make sure that the dotfiles on your system can be overwritten. Navigate t
 
 ```
 cp -rfT . ~
+rm -r ~/.git ~/README.md
 ```
