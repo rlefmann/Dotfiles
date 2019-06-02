@@ -17,5 +17,5 @@ if [ -f "$FILE" ]; then
 	alsactl --file "$FILE" restore
 fi
 
-~/.local/bin/dwmstatus.sh &
+sh ~/.local/bin/dwmstatus.sh &
 exec dwm
