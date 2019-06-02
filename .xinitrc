@@ -17,4 +17,5 @@ if [ -f "$FILE" ]; then
 	alsactl --file "$FILE" restore
 fi
 
-exec i3
+~/.local/bin/dwmstatus.sh &
+exec dwm
