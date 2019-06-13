@@ -9,7 +9,7 @@ xmodmap -e "keycode 104 = braceright"
 udevil
 
 # set the background:
-xsetroot -solid "#111111"
+xsetroot -solid "#005577"
 
 # restore ALSA settings for headphones to work on startup:
 FILE="/home/lefmann/.config/asound.state"
