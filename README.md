@@ -7,6 +7,5 @@ This repository contains my personal dotfiles.
 First, make sure that the dotfiles on your system can be overwritten. Navigate to the downloaded directory and execute
 
 ```
-cp -rfT . ~
-rm -r ~/.git ~/README.md
+sh install.sh
 ```
