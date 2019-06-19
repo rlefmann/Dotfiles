@@ -1,5 +1,5 @@
 # set keymap for german keyboard:
-setxkbmap de
+setxkbmap -layout de -option caps:escape
 
 # remap numpad keys for easier access to backslash and left and right braces:
 xmodmap -e "keycode 90 = backslash"
