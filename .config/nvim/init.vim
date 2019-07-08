@@ -2,6 +2,8 @@ set nocompatible
 syntax on
 filetype plugin on
 
+colorscheme happy_hacking
+
 set encoding=utf-8
 
 set number relativenumber
