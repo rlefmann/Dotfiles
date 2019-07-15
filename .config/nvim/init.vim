@@ -23,3 +23,6 @@ map <C-H> <C-W><C-H>
 vnoremap <C-C> "+y
 " paste from system clipboard:
 map <C-p> "+P
+
+" open url in firefox when pressing gx in normal mode:
+let g:netrw_browsex_viewer = "firefox"
