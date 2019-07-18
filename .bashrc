@@ -69,3 +69,5 @@ set -o vi
 shopt -s histappend
 
 PS1="\$(if [[ \$? == 0 ]]; then echo \"\[\033[1;34m\]\"; else echo \"\[\033[1;31m\]\"; fi)[\W]\[\033[0m\] "
+
+export PATH="$PATH:$HOME/.local/bin"
