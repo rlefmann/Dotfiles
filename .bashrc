@@ -17,6 +17,8 @@ alias xr="sudo xbps-remove -R"
 
 alias sdn="sudo shutdown -P now"
 
+alias sync_from_drive="rclone sync googledrive: ~/Drive"
+alias sync_to_drive="rclone sync ~/Drive googledrive:"
 
 # # ex - archive extractor
 # # usage: ex <file>
