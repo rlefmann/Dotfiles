@@ -20,6 +20,10 @@ alias sdn="sudo shutdown -P now"
 alias sync_from_drive="rclone sync googledrive: ~/Drive"
 alias sync_to_drive="rclone sync ~/Drive googledrive:"
 
+# fzf history search when typing ctrl+r:
+[ -f /usr/share/doc/fzf/key-bindings.bash ] && source /usr/share/doc/fzf/key-bindings.bash
+
+
 # # ex - archive extractor
 # # usage: ex <file>
 ex ()
