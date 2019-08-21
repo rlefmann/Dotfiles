@@ -5,6 +5,9 @@
 
 use_color=true
 
+# Enable history appending:
+shopt -s histappend
+
 alias ls='ls --color=auto --group-directories-first'
 alias ll="ls -lh"
 alias la="ls -lha"
