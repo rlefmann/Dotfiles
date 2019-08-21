@@ -20,9 +20,6 @@ alias sdn="sudo shutdown -P now"
 alias sync_from_drive="rclone sync googledrive: ~/Drive"
 alias sync_to_drive="rclone sync ~/Drive googledrive:"
 
-# fzf history search when typing ctrl+r:
-[[ -f /usr/share/doc/fzf/key-bindings.bash ]] && source /usr/share/doc/fzf/key-bindings.bash
-
 
 # # ex - archive extractor
 # # usage: ex <file>
@@ -77,3 +74,7 @@ shopt -s histappend
 PS1="\$(if [[ \$? == 0 ]]; then echo \"\[\033[1;34m\]\"; else echo \"\[\033[1;31m\]\"; fi)[\W]\[\033[0m\] "
 
 export PATH="$PATH:$HOME/.local/bin"
+
+# fzf history search when typing ctrl+r:
+[ -f /usr/share/doc/fzf/key-bindings.bash ] && source /usr/share/doc/fzf/key-bindings.bash
+
