@@ -23,6 +23,15 @@ alias sdn="sudo shutdown -P now"
 alias sync_from_drive="rclone sync googledrive: ~/Drive"
 alias sync_to_drive="rclone sync ~/Drive googledrive:"
 
+# start and stop wired internet connection:
+alias netstop="sudo ip link set down enp2s0"
+alias netstart="sudo ip link set up enp2s0"
+
+# set the time and date from the internet:
+sync_time_from_web ()
+{
+	sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
+}
 
 # # ex - archive extractor
 # # usage: ex <file>
