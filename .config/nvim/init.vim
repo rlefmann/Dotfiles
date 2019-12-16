@@ -2,6 +2,23 @@ set nocompatible
 syntax on
 filetype plugin on
 
+" Download and install vim-plug:
+if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
+	echo "Downloading junegunn/vim-plug to manage plugins..."
+	silent !mkdir -p ~/.config/nvim/autoload/
+	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim
+	autocmd VimEnter * PlugInstall
+endif
+
+" vim-plug plugins:
+call plug#begin('~/.config/nvim/plugged')
+Plug 'vimwiki/vimwiki'
+call plug#end()
+
+
+" hides buffers instead of closing them:
+set hidden
+
 colorscheme happy_hacking
 
 set encoding=utf-8
@@ -26,3 +43,7 @@ map <C-p> "+P
 
 " open url in firefox when pressing gx in normal mode:
 let g:netrw_browsex_viewer = "firefox"
+
+" set vimwiki syntax to markdown:
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+	\ 'syntax': 'markdown', 'ext': '.md'}]
