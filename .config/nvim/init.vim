@@ -13,6 +13,7 @@ endif
 " vim-plug plugins:
 call plug#begin('~/.config/nvim/plugged')
 Plug 'vimwiki/vimwiki'
+Plug 'junegunn/goyo.vim'
 call plug#end()
 
 
