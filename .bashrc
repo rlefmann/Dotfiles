@@ -1,10 +1,13 @@
 # .bashrc
 
+# Names of wireless and etheret device:
+WIFI=wlp3s0
+ETHERNET=enp2s0
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 use_color=true
-
 
 # Unlimited bash history:
 HISTSIZE=
@@ -27,12 +30,31 @@ alias xr="sudo xbps-remove -R"
 
 alias sdn="sudo shutdown -P now"
 
-alias sync_from_drive="rclone sync googledrive: ~/Drive"
-alias sync_to_drive="rclone sync ~/Drive googledrive:"
+if [ ! -z $WIFI ]; then
+	alias wifi_start="sudo ip link set up $WIFI"
+	alias wifi_stop="sudo ip link set down $WIFI"
+	alias wifi_scan="sudo iw dev $WIFI scan | grep SSID: | sed 's/^[ \t]*SSID: //'"
+	alias wifi_disconnect="sudo killall wpa_supplicant"
+
+	wifi_connect ()
+	{
+		if [ -f "$1" ]; then
+			sudo wpa_supplicant -B -i "$WIFI" -c "$1";
+			sudo dhcpcd "$WIFI";
+		else
+			echo "'$1' is not a valid file"
+		fi
+	}
+fi
 
 # start and stop wired internet connection:
-alias netstop="sudo ip link set down enp2s0"
-alias netstart="sudo ip link set up enp2s0"
+if [ ! -z $ETHERNET ]; then
+	alias ethernet_start="sudo ip link set up $ETHERNET"
+	alias ethernet_stop="sudo ip link set down $ETHERNET"
+fi
+
+alias sync_from_drive="rclone sync googledrive: ~/Drive"
+alias sync_to_drive="rclone sync ~/Drive googledrive:"
 
 # set the time and date from the internet:
 sync_time_from_web ()
