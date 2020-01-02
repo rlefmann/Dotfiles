@@ -14,8 +14,8 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 Plug 'vimwiki/vimwiki'
 Plug 'junegunn/goyo.vim'
+Plug 'scrooloose/nerdtree'
 call plug#end()
-
 
 " hides buffers instead of closing them:
 set hidden
@@ -37,14 +37,26 @@ map <C-K> <C-W><C-K>
 map <C-L> <C-W><C-L>
 map <C-H> <C-W><C-H>
 
-" copy selected text to system clipboard:
-vnoremap <C-C> "+y
-" paste from system clipboard:
-map <C-p> "+P
+" Clipboard in Linux is a bit weird. Therefore this might not work on every
+" system.
+" Vim offers the '+' and '*' registers to reference the system clipboard.
+" On Linux '+' corresponds to the desktop keyboard (Ctrl+C, Ctrl+V) and '*'
+" corresponds to the X11 primary selection (paste using the middle mouse
+" button)
+" y and p will use the register '+', i.e. you can paste with Ctrl+V:
+set clipboard+=unnamedplus
+" If you want to use the '*' instead:
+" set clipboard+=unnamed
+"
+" Alternatively, use Ctrl+C and Ctrl+P (Ctrl+V is for visual mode, so this
+" cannot be used):
+vnoremap <C-c> y
+map <C-p> P
+
+" open nerdtree:
+map <C-n> :NERDTreeToggle<CR>
+" open goyo:
+map <C-g> :Goyo<CR>
 
 " open url in firefox when pressing gx in normal mode:
 let g:netrw_browsex_viewer = "firefox"
-
-" set vimwiki syntax to markdown:
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-	\ 'syntax': 'markdown', 'ext': '.md'}]
