@@ -1,6 +1,7 @@
 set nocompatible
 syntax on
 filetype plugin on
+filetype indent off
 
 " Download and install vim-plug:
 if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
@@ -20,11 +21,13 @@ call plug#end()
 " hides buffers instead of closing them:
 set hidden
 
-colorscheme happy_hacking
+
+" set background of tab bar to black:
+hi TabLineFill ctermfg=Black ctermbg=Black
 
 set encoding=utf-8
 
-set number relativenumber
+set number
 set tabstop=2
 set shiftwidth=2
 
@@ -36,6 +39,10 @@ map <C-J> <C-W><C-J>
 map <C-K> <C-W><C-K>
 map <C-L> <C-W><C-L>
 map <C-H> <C-W><C-H>
+
+" use ;; to navigate to the next <++>:
+inoremap ;; <Esc>/<++><Enter>"_c4l
+
 
 " Clipboard in Linux is a bit weird. Therefore this might not work on every
 " system.
@@ -55,6 +62,7 @@ map <C-p> P
 
 " open nerdtree:
 map <C-n> :NERDTreeToggle<CR>
+
 " open goyo:
 map <C-g> :Goyo<CR>
 
