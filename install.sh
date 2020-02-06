@@ -1,10 +1,20 @@
 #!/bin/sh
 
-command -v rsync >/dev/null 2>&1 || { echo >&2 "Error: rsync is not installed.  Aborting."; exit 1; }
+# The nvim config directory should be a real directory and not a symlink
+# to allow for the installation of plugins without messing up the dotfiles
+# repository:
+rm -rf $HOME/.config/nvim/*
+mkdir -p $HOME/.config/nvim
 
-rsync --exclude ".git/" --exclude "README.md" --exclude "install.sh" -avh . $HOME
+rm -rf $HOME/.config/newsboat
+rm -rf $HOME/.config/zathura
+rm -f $HOME/.bashrc
+rm -f $HOME/.profile
+rm -f $HOME/.xinitrc
 
 # Remove .bash_profile and add a symbolic link with the same name to .profile
 # This ensures that .profile is read by every bash instance
-rm -f "$HOME/.bash_profile"
-ln -s "$HOME/.profile" "$HOME/.bash_profile"
+rm -rf $HOME/.bash_profile
+ln -s $HOME/.profile $HOME/.bash_profile
+
+stow applications system
