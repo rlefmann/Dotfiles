@@ -12,6 +12,10 @@ rm -f $HOME/.bashrc
 rm -f $HOME/.profile
 rm -f $HOME/.xinitrc
 
+if [ ! -d $HOME/.local/bin ]; then
+	mkdir -p $HOME/.local/bin
+fi
+
 # Remove .bash_profile and add a symbolic link with the same name to .profile
 # This ensures that .profile is read by every bash instance
 rm -rf $HOME/.bash_profile
