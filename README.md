@@ -13,3 +13,10 @@ sh ./install.sh
 ```
 
 This will delete existing dotfiles and create symlinks to the repository directory.
+
+## Remove dotfiles
+
+```
+cd .dotfiles
+stow -D applications system
+```
