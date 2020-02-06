@@ -8,6 +8,7 @@ mkdir -p $HOME/.config/nvim
 
 rm -rf $HOME/.config/newsboat
 rm -rf $HOME/.config/zathura
+rm -rf $HOME/.config/fontconfig
 rm -f $HOME/.bashrc
 rm -f $HOME/.profile
 rm -f $HOME/.xinitrc
