@@ -1,5 +1,7 @@
 # .profile
 
+export PATH="$PATH:$HOME/.local/bin"
+
 export TERMINAL="st"
 export EDITOR="nvim"
 export READER="zathura"
