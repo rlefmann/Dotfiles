@@ -1,5 +1,7 @@
 auto-reload yes
 
+text-width 74
+
 bind-key j down
 bind-key k up
 bind-key j next articlelist
@@ -12,4 +14,5 @@ bind-key d pagedown
 bind-key u pageup
 
 browser $BROWSER
+player "mpv"
 macro v set browser "mpv %u" ; open-in-browser ; set browser $BROWSER
