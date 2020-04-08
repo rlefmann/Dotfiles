@@ -3,7 +3,7 @@
 echo This will overwrite the following files:
 find . \
   -not -path "*/.git/*" \
-	-not -name "install.sh" \
+	-not -name "INSTALL.sh" \
 	-not -name "README.md" \
 	-type f \
 	-printf "  $HOME/%P\n"
