@@ -1,25 +1,29 @@
 #!/bin/sh
 
-# The nvim config directory should be a real directory and not a symlink
-# to allow for the installation of plugins without messing up the dotfiles
-# repository:
-rm -rf $HOME/.config/nvim/*
-mkdir -p $HOME/.config/nvim
+echo This will overwrite the following files:
+find . \
+  -not -path "*/.git/*" \
+	-not -name "install.sh" \
+	-not -name "README.md" \
+	-type f \
+	-printf "  $HOME/%P\n"
+read -p "Are you sure? " yn
 
-rm -rf $HOME/.config/newsboat
-rm -rf $HOME/.config/zathura
-rm -rf $HOME/.config/fontconfig
-rm -f $HOME/.bashrc
-rm -f $HOME/.profile
-rm -f $HOME/.xinitrc
-
-if [ ! -d $HOME/.local/bin ]; then
-	mkdir -p $HOME/.local/bin
+if [ $yn != "y" ] && [ $yn != "Y" ]; then
+	exit 1
 fi
+
+cp .bashrc  ~
+cp .profile ~
+cp .xinitrc ~
+
+# Create directories:
+find .config -type d -links 2 -exec mkdir -p "$HOME/{}" \;
+
+# Copy files:
+find .config -type f -exec cp "{}" "$HOME/{}" \;
 
 # Remove .bash_profile and add a symbolic link with the same name to .profile
 # This ensures that .profile is read by every bash instance
 rm -rf $HOME/.bash_profile
 ln -s $HOME/.profile $HOME/.bash_profile
-
-stow applications system
