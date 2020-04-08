@@ -11,11 +11,11 @@ udevil
 # set the background:
 xsetroot -solid "#005577"
 
+sh ~/.local/bin/dwmstatus.sh &
+exec dwm
+
 # restore ALSA settings for headphones to work on startup:
 FILE="/home/lefmann/.config/asound.state"
 if [ -f "$FILE" ]; then
 	alsactl --file "$FILE" restore
 fi
-
-sh ~/.local/bin/dwmstatus.sh &
-exec dwm
