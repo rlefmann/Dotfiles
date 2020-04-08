@@ -1,0 +1,97 @@
+!st.font: Monospace-16
+st.font: UbuntuMono-16
+st.borderpx: 5
+
+!name   dark light
+!black  0     8   
+!red    1     9   
+!green  2    10   
+!yellow 3    11   
+!blue   4    12   
+!purple 5    13   
+!cyan   6    14   
+!white  7    15   
+
+
+!! dark
+!*.foreground: white
+!*.background: white
+!*.color0:     black  
+!*.color1:   #ab4642
+!*.color2:   #7e807e
+!*.color3:   #f7ca88
+!*.color4:   #7cafc2
+!*.color5:   #ba8baf
+!*.color6:   #1abb9b
+!*.color7:    gray90 
+!*.color8:    gray50 
+!*.color9:   #ab4642
+!*.color10:  #8d8f8d
+!*.color11:  #f7ca88
+!*.color12:  #5c5cff
+!*.color13:  #ba8baf
+!*.color14:  #1abb9b
+!*.color15:    white  
+
+
+!! light
+!*.foreground: black
+!*.background: black
+!*.color0:     white
+!*.color1:   #ab4642
+!*.color2:   #7e807e
+!*.color3:   #f7ca88
+!*.color4:   #7cafc2
+!*.color5:   #ba8baf
+!*.color6:   #1abb9b
+!*.color7:     black
+!*.color8:     white
+!*.color9:   #ab4642
+!*.color10:  #8d8f8d
+!*.color11:  #f7ca88
+!*.color12:  #5c5cff
+!*.color13:  #ba8baf
+!*.color14:  #1abb9b
+!*.color15:    black  
+
+
+!*.foreground: black
+!*.background: black
+!*.color0:     white
+!*.color1:   #ab4642
+!*.color2:   #7e807e
+!*.color3:   #f7ca88
+!*.color4:   #7cafc2
+!*.color5:   #ba8baf
+!*.color6:   #107662
+!*.color7:     black
+!*.color8:     white
+!*.color9:   #ab4642
+!*.color10:  #8d8f8d
+!*.color11:  #f7ca88
+!*.color12:  #5c5cff
+!*.color13:  #ba8baf
+!*.color14:  #107662
+!*.color15:    black  
+
+
+
+!! xcodedark
+*.foreground: white
+*.background: white
+*.color0:     black
+*.color1:   #ff8170
+*.color2:   #78c2b3
+*.color3:   #d9c97c
+*.color4:   #4eb0cc
+*.color5:   #ff7ab2
+*.color6:   #b281eb
+*.color7:   #dfdfe0 
+*.color8:   #7f8c98 
+*.color9:   #ff8170
+*.color10:  #acf2e4
+*.color11:  #ffa14f
+*.color12:  #6bdfff
+*.color13:  #ff7ab2
+*.color14:  #dabaff
+*.color15:  #dfdfe0  
