@@ -16,6 +16,7 @@ fi
 cp .bashrc  ~
 cp .profile ~
 cp .xinitrc ~
+cp .Xresources ~
 
 # Create directories:
 find .config -type d -links 2 -exec mkdir -p "$HOME/{}" \;
