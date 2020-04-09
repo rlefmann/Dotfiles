@@ -56,6 +56,8 @@ fi
 alias sync_from_drive="rclone sync googledrive: ~/Drive"
 alias sync_to_drive="rclone sync ~/Drive googledrive:"
 
+alias set_time="sudo date +%T -s"
+
 # set the time and date from the internet:
 sync_time_from_web ()
 {
