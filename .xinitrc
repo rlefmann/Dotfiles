@@ -8,14 +8,17 @@ xmodmap -e "keycode 104 = braceright"
 
 udevil
 
+# read .Xresources:
+[ -f $HOME/.Xresources ] && xrdb $HOME/.Xresources
+
 # set the background:
 xsetroot -solid "#005577"
 
 sh ~/.local/bin/dwmstatus.sh &
 exec dwm
 
-# restore ALSA settings for headphones to work on startup:
-FILE="/home/lefmann/.config/asound.state"
-if [ -f "$FILE" ]; then
-	alsactl --file "$FILE" restore
+# restore ALSA settings:
+ALSAFILE="/home/lefmann/.config/asound.state"
+if [ -f "$ALSAFILE" ]; then
+	alsactl --file "$ALSAFILE" restore
 fi
