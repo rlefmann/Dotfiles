@@ -1,0 +1,8 @@
+#!/bin/sh
+
+while read file
+do
+	case "$1" in
+		"d") [ "$(printf "No\\nYes" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file" ;;
+	esac
+done
