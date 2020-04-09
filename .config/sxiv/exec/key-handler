@@ -1,8 +1,22 @@
 #!/bin/sh
 
-while read file
-do
-	case "$1" in
-		"d") [ "$(printf "No\\nYes" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file" ;;
-	esac
-done
+delete() {
+	while read file
+	do
+		[ "$(printf "No\\nYes" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file"
+	done
+}
+
+delete_all() {
+	if [ "$(printf "No\\nYes" | dmenu -i -p "Really delete ALL marked files?")" = "Yes" ]; then
+		while read file
+		do
+			rm "$file"
+		done
+	fi
+}
+
+case "$1" in
+	"d") delete ;;
+	"D") delete_all ;; 
+esac
