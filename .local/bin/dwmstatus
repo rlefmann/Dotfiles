@@ -3,7 +3,7 @@
 # (if the machine has a battery) and the current time.
 
 print_date() {
-  date +"%H:%M"
+  date +"%d %b %H:%M"
 }
 
 print_battery() {
