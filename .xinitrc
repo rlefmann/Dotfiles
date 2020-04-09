@@ -14,7 +14,7 @@ udevil
 # set the background:
 xsetroot -solid "#005577"
 
-sh ~/.local/bin/dwmstatus.sh &
+[ -f $HOME/.local/bin/dwmstatus ] && sh ~/.local/bin/dwmstatus &
 exec dwm
 
 # restore ALSA settings:
