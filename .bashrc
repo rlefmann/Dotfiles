@@ -114,3 +114,8 @@ PS1="\$(if [[ \$? == 0 ]]; then echo \"\[\033[1;34m\]\"; else echo \"\[\033[1;31
 
 # fzf history search when typing ctrl+r:
 [ -f /usr/share/doc/fzf/key-bindings.bash ] && source /usr/share/doc/fzf/key-bindings.bash
+
+# With a dircolors you can change the appearance of
+# directories in the shell. To create a dircolors file run
+# dircolors --print-database > ~/.dircolors
+[ -f $HOME/.dircolors ] && eval "`dircolors $HOME/.dircolors`"
