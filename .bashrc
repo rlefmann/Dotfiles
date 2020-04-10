@@ -21,6 +21,7 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 alias ls='ls --color=auto --group-directories-first'
 alias ll="ls -lh"
 alias la="ls -lha"
+alias rf="rm -rf"
 
 alias vim=nvim
 
