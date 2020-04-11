@@ -9,15 +9,6 @@ ETHERNET=enp2s0
 
 use_color=true
 
-# Unlimited bash history:
-HISTSIZE=
-HISTFILESIZE=
-# Enable history appending:
-shopt -s histappend
-# Immediately write to history file after each command:
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-
-
 alias ls='ls --color=auto --group-directories-first'
 alias ll="ls -lh"
 alias la="ls -lha"
@@ -120,3 +111,11 @@ PS1="\$(if [[ \$? == 0 ]]; then echo \"\[\033[1;34m\]\"; else echo \"\[\033[1;31
 # directories in the shell. To create a dircolors file run
 # dircolors --print-database > ~/.dircolors
 [ -f $HOME/.dircolors ] && eval "`dircolors $HOME/.dircolors`"
+
+# Unlimited bash history:
+HISTSIZE=-1
+HISTFILESIZE=-1
+# Enable history appending:
+shopt -s histappend
+# Immediately write to history file after each command:
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
