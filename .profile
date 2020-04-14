@@ -3,6 +3,7 @@
 export PATH="$PATH:$HOME/.local/bin"
 
 export TERMINAL="st"
+export VISUAL="nvim"
 export EDITOR="nvim"
 export READER="zathura"
 export BROWSER="surf"

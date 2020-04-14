@@ -80,8 +80,6 @@ ex ()
   fi
 }
 
-VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
-
 # cd to current directory when exiting nnn:
 export NNN_TMPFILE="/tmp/nnn"
 n()
