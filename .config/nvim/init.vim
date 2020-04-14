@@ -46,6 +46,10 @@ map <C-H> <C-W><C-H>
 nnoremap <leader>h :split<Space>
 nnoremap <leader>v :vsplit<Space>
 
+" shortcuts for search and replace:
+nnoremap <leader>s :%s//gc<Left><Left><Left>
+nnoremap <leader>S :%s//g<Left><Left>
+
 " use ;; to navigate to the next <++>:
 inoremap ;; <Esc>/<++><Enter>"_c4l
 
