@@ -21,7 +21,8 @@ call plug#end()
 " hides buffers instead of closing them:
 set hidden
 
-
+set cursorline
+highlight CursorLine cterm=bold
 " set background of tab bar to black:
 hi TabLineFill ctermfg=Black ctermbg=Black
 
