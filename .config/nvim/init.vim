@@ -3,6 +3,8 @@ syntax on
 filetype plugin on
 filetype indent off
 
+let mapleader=","
+
 " Download and install vim-plug:
 if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 	echo "Downloading junegunn/vim-plug to manage plugins..."
@@ -40,6 +42,9 @@ map <C-J> <C-W><C-J>
 map <C-K> <C-W><C-K>
 map <C-L> <C-W><C-L>
 map <C-H> <C-W><C-H>
+
+nnoremap <leader>h :split<Space>
+nnoremap <leader>v :vsplit<Space>
 
 " use ;; to navigate to the next <++>:
 inoremap ;; <Esc>/<++><Enter>"_c4l
