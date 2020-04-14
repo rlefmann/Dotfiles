@@ -11,7 +11,7 @@ use_color=true
 
 alias ls='ls --color=auto --group-directories-first'
 alias ll="ls -lh"
-alias la="ls -lha"
+alias la="ls -lhA"
 alias rf="rm -rf"
 
 alias vim=nvim
