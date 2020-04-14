@@ -117,5 +117,7 @@ HISTSIZE=-1
 HISTFILESIZE=-1
 # Enable history appending:
 shopt -s histappend
+# Change the file location because certain bash sessions truncate .bash_history file upon close:
+export HISTFILE=~/.bash_eternal_history
 # Immediately write to history file after each command:
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
