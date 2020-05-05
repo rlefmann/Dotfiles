@@ -1,15 +1,15 @@
 #!/bin/sh
 
-echo This will overwrite the following files:
-find . \
-  -not -path "*/.git/*" \
-	-not -name "INSTALL.sh" \
-	-not -name "README.md" \
-	-type f \
-	-printf "  $HOME/%P\n"
-read -p "Are you sure? " yn
+findparams='-type f -not -path */.git/* -not -name INSTALL.sh -not -name README.md'
 
-if [ $yn != "y" ] && [ $yn != "Y" ]; then
+echo This will overwrite the following files:
+find . $findparams -printf "  $HOME/%P\n"
+read -p "Are you sure? ([y]es, [n]o, show [d]ifferences) " ynd
+
+if [ $ynd = "d" ]; then
+	find . $findparams -exec diff -q {} $HOME/{} \;
+	exit 0
+elif [ $ynd != "y" ]; then
 	exit 1
 fi
 
@@ -17,12 +17,7 @@ fi
 find .config -type d -links 2 -exec mkdir -p "$HOME/{}" \;
 
 # Copy files:
-find . \
-	-type f \
-  -not -path "*/.git/*" \
-	-not -name "INSTALL.sh" \
-	-not -name "README.md" \
-	-exec cp "{}" "$HOME/{}" \;
+find . $findparams -exec cp "{}" "$HOME/{}" \;
 
 # Remove .bash_profile and add a symbolic link with the same name to .profile
 # This ensures that .profile is read by every bash instance
