@@ -6,7 +6,7 @@ export TERMINAL="st"
 export VISUAL="nvim"
 export EDITOR="nvim"
 export READER="zathura"
-export BROWSER="surf"
+export BROWSER="vimb"
 
 # Automatically startx on login:
 if [[ "$(tty)" = "/dev/tty1" ]]; then
