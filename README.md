@@ -11,3 +11,14 @@ git clone https://github.com/rlefmann/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 sh ./INSTALL.sh
 ```
+
+## Software I use
+
+* Window manager: dwm
+* Terminal: st
+* Text editor: nvim
+* PDF viewer: zathura
+* Image viewer: sxiv
+* Web browser: vimb
+* RSS reader: newsboat
+* Video player: mpv
