@@ -80,6 +80,3 @@ map <C-n> :NERDTreeToggle<CR>
 
 " open goyo:
 map <C-g> :Goyo<CR>
-
-" open url in firefox when pressing gx in normal mode:
-let g:netrw_browsex_viewer = "surf"
