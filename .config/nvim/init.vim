@@ -7,6 +7,9 @@ set mouse=a
 
 let mapleader=","
 
+set ignorecase
+set smartcase
+
 " Download and install vim-plug:
 if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 	echo "Downloading junegunn/vim-plug to manage plugins..."
@@ -17,9 +20,10 @@ endif
 
 " vim-plug plugins:
 call plug#begin('~/.config/nvim/plugged')
-Plug 'vimwiki/vimwiki'
-Plug 'junegunn/goyo.vim'
-Plug 'scrooloose/nerdtree'
+	Plug 'vimwiki/vimwiki'
+	Plug 'junegunn/goyo.vim'
+	Plug 'scrooloose/nerdtree'
+	Plug 'JuliaEditorSupport/julia-vim'
 call plug#end()
 
 " hides buffers instead of closing them:
@@ -27,6 +31,14 @@ set hidden
 
 set cursorline
 highlight CursorLine cterm=bold
+
+" fix highlighting of cursor line after exiting Goyo:
+augroup on_colorscheme
+	autocmd!
+	autocmd ColorScheme * set cursorline
+	autocmd ColorScheme * highlight CursorLine cterm=bold
+augroup END
+
 " set background of tab bar to black:
 hi TabLineFill ctermfg=Black ctermbg=Black
 
@@ -51,9 +63,6 @@ nnoremap <leader>v :vsplit<Space>
 " shortcuts for search and replace:
 nnoremap <leader>s :%s//gc<Left><Left><Left>
 nnoremap <leader>S :%s//g<Left><Left>
-
-" use ;; to navigate to the next <++>:
-inoremap ;; <Esc>/<++><Enter>"_c4l
 
 
 " Clipboard in Linux is a bit weird. Therefore this might not work on every
