@@ -10,6 +10,7 @@ ETHERNET=enp2s0
 use_color=true
 
 alias ls='ls --color=auto --group-directories-first'
+alias l='ls -1'
 alias ll="ls -lh"
 alias la="ls -lhA"
 alias rf="rm -rf"
@@ -119,3 +120,5 @@ shopt -s histappend
 export HISTFILE=~/.bash_eternal_history
 # Immediately write to history file after each command:
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+[ -f $HOME/.bash_env ] && source $HOME/.bash_env
