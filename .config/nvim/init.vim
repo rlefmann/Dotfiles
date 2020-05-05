@@ -3,6 +3,8 @@ syntax on
 filetype plugin on
 filetype indent off
 
+set mouse=a
+
 let mapleader=","
 
 " Download and install vim-plug:
