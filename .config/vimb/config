@@ -1,0 +1,11 @@
+shortcut-default g
+shortcut-add g=http://www.google.com#q=$0
+shortcut-add gh=http://www.github.com/rlefmann
+
+set download-path=~/Downloads
+
+nnoremap h <C-o>
+nnoremap l <C-i>
+nnoremap + zi
+nnoremap - zo
+nnoremap 0 zz
