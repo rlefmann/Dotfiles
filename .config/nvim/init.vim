@@ -39,6 +39,7 @@ augroup on_colorscheme
 	autocmd ColorScheme * highlight CursorLine cterm=bold
 augroup END
 
+set showtabline=2
 " set background of tab bar to black:
 hi TabLineFill ctermfg=Black ctermbg=Black
 
@@ -59,6 +60,10 @@ map <C-H> <C-W><C-H>
 
 nnoremap <leader>h :split<Space>
 nnoremap <leader>v :vsplit<Space>
+
+" TAB key will switch to the next tab
+nnoremap <TAB> :tabnext<CR>
+nnoremap <S-TAB> :tabprevious<CR>
 
 " shortcuts for search and replace:
 nnoremap <leader>s :%s//gc<Left><Left><Left>
