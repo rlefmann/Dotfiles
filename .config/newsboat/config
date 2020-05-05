@@ -16,3 +16,5 @@ bind-key u pageup
 browser $BROWSER
 player "mpv"
 macro v set browser "mpv %u" ; open-in-browser ; set browser $BROWSER
+
+color listfocus black cyan
