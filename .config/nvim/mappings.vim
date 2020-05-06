@@ -9,6 +9,18 @@ map <C-H> <C-W><C-H>
 nnoremap <leader>h :split<Space>
 nnoremap <leader>v :vsplit<Space>
 
+" close a buffer and delete it from the buffer list:
+nnoremap <C-w> :bdelete<CR>
+" save the current buffer:
+nnoremap <C-s> :w<CR>
+
+" list open buffers:
+nnoremap <leader>l :ls<CR>
+" open a new tab for each buffer:
+nnoremap <leader>t :tab sball<CR>
+" open the file explorer in a new tab:
+nnoremap <leader>o :tabedit . <CR>
+
 " tab key will switch to the next tab
 nnoremap <TAB> :tabnext<CR>
 nnoremap <S-TAB> :tabprevious<CR>
