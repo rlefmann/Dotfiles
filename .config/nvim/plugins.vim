@@ -7,8 +7,9 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
-	Plug 'vimwiki/vimwiki'
-	Plug 'junegunn/goyo.vim'
+  Plug 'vimwiki/vimwiki'
+  Plug 'junegunn/goyo.vim'
   "Plug 'scrooloose/nerdtree'
-	Plug 'JuliaEditorSupport/julia-vim'
+  Plug 'JuliaEditorSupport/julia-vim'
+  Plug 'ap/vim-css-color'
 call plug#end()
