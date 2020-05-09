@@ -9,3 +9,4 @@ nnoremap l <C-i>
 nnoremap + zi
 nnoremap - zo
 nnoremap 0 zz
+nnoremap q <C-q>
