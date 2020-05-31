@@ -1,6 +1,7 @@
 shortcut-default g
 shortcut-add g=http://www.google.com#q=$0
 shortcut-add gh=http://www.github.com/rlefmann
+shortcut-add l=https://www.linguee.com/english-german/search?source=auto&query=$0
 
 set download-path=~/Downloads
 
