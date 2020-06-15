@@ -23,6 +23,8 @@ alias xr="sudo xbps-remove -R"
 
 alias sdn="sudo shutdown -P now"
 
+alias yta="youtube-dl -x -f bestaudio/best"
+
 if [ ! -z $WIFI ]; then
 	alias wifi_start="sudo ip link set up $WIFI"
 	alias wifi_stop="sudo ip link set down $WIFI"
