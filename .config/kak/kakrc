@@ -3,3 +3,10 @@ add-highlighter global/ wrap -word -width 80
 
 set global tabstop 2
 set global indentwidth 2
+
+map global normal D <a-x>d -docstring 'delete line'
+map global user '#' ':comment-line<ret>' -docstring 'comment line'
+
+hook global NormalKey y %{ nop %sh{
+  printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
+}}
