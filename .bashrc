@@ -22,14 +22,20 @@ alias la="ls -lhA"
 alias rf="rm -rf"
 
 alias vim=nvim
+alias yta="youtube-dl -x -f bestaudio/best"
+
+# git
+alias status='git status'
+alias add='git add'
+alias commit='git commit -m'
+alias pull='git pull'
+alias push='git push'
 
 alias xi="sudo xbps-install"
 alias xq="xbps-query -Rs"
 alias xr="sudo xbps-remove -R"
 
 alias sdn="sudo shutdown -P now"
-
-alias yta="youtube-dl -x -f bestaudio/best"
 
 if [ ! -z $WIFI ]; then
 	alias wifi_start="sudo ip link set up $WIFI"
