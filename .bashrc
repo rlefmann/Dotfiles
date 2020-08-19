@@ -22,7 +22,8 @@ alias la="ls -lhA"
 alias rf="rm -rf"
 
 alias vim=nvim
-alias yta="youtube-dl -x -f bestaudio/best"
+alias yta='youtube-dl -x -f bestaudio/best'
+alias ytv='youtube-dl -f bestvideo+bestaudio'
 
 # git
 alias status='git status'
