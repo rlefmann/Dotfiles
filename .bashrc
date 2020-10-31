@@ -69,7 +69,7 @@ alias set_time="sudo date +%T -s"
 # set the time and date from the internet:
 sync_time_from_web ()
 {
-	sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
+	sudo date -s "$(curl -s --head http://google.com | grep ^Date: | sed 's/Date: //g')"
 }
 
 # # ex - archive extractor
