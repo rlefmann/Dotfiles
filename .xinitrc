@@ -12,7 +12,7 @@ udevil
 [ -f $HOME/.Xresources ] && xrdb $HOME/.Xresources
 
 # set the background:
-xsetroot -solid "#005577"
+xsetroot -solid "#111111"
 
 [ -f $HOME/.local/bin/dwmstatus ] && sh ~/.local/bin/dwmstatus &
 exec dwm
