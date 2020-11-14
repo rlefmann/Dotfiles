@@ -5,6 +5,7 @@ shortcut-add l=https://www.linguee.com/english-german/search?source=auto&query=$
 shortcut-add r=http://old.reddit.com
 shortcut-add y=http://www.youtube.com
 shortcut-add yt=http://www.youtube.com
+shortcut-add p=http://localhost:631/admin
 
 set download-path=~/Downloads
 
