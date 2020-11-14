@@ -15,8 +15,8 @@ sh ./INSTALL.sh
 ## Software I use
 
 * Window manager: dwm
-* Terminal: st
-* Text editor: nvim
+* Terminal: alacritty
+* Text editor: kakoune (previously: nvim)
 * PDF viewer: zathura
 * Image viewer: sxiv
 * Web browser: vimb
