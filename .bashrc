@@ -21,6 +21,10 @@ alias ll="ls -lh"
 alias la="ls -lhA"
 alias rf="rm -rf"
 
+alias mv='mv -iv'
+alias cp='cp -riv'
+alias mkdir='mkdir -vp'
+
 alias vim=nvim
 alias yta='youtube-dl -x -f bestaudio/best'
 alias ytv='youtube-dl -f bestvideo+bestaudio'
