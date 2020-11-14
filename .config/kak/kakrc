@@ -1,5 +1,6 @@
 add-highlighter global/ number-lines
 add-highlighter global/ wrap -word -width 80
+add-highlighter global/ show-matching
 
 set global tabstop 2
 set global indentwidth 2
