@@ -2,9 +2,9 @@
 
 export PATH="$PATH:$HOME/.local/bin"
 
-export TERMINAL="st"
-export VISUAL="nvim"
-export EDITOR="nvim"
+export TERMINAL="alacritty"
+export VISUAL="kak"
+export EDITOR="kak"
 export READER="zathura"
 export BROWSER="vimb"
 
