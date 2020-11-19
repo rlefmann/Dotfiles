@@ -45,7 +45,7 @@ alias sdn="sudo shutdown -P now"
 if [ ! -z $WIFI ]; then
 	alias wifi_start="sudo ip link set up $WIFI"
 	alias wifi_stop="sudo ip link set down $WIFI"
-	alias wifi_scan="sudo iw dev $WIFI scan | grep SSID: | sed 's/^[ \t]*SSID: //'"
+	alias wifi_scan="sudo iw dev $WIFI scan | grep SSID: | sed 's/^[ \t]*SSID: //; /^$/d' | uniq"
 	alias wifi_disconnect="sudo killall wpa_supplicant"
 
 	wifi_connect ()
