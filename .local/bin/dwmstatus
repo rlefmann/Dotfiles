@@ -1,6 +1,8 @@
 #!/bin/sh
 # Set the DWM status bar text to the remaining battery capacity
 # (if the machine has a battery) and the current time.
+# If the pomodoro timer program `pomo` is installed it will
+# additionally display its current state.
 
 print_date() {
   date +" %a %d %b %Y · %H:%M"
@@ -14,8 +16,16 @@ print_battery() {
 	fi
 }
 
+# show a pomodoro timer if the program pomo is installed:
+# https://github.com/jsspencer/pomo
+print_pomo() {
+  if command -v pomo > /dev/null 2>&1; then
+		printf " %s ·" $(pomo clock)
+	fi
+}
+
 while true
 do
-  xsetroot -name "$(print_battery)$(print_date)"
-  sleep 2
+  xsetroot -name "$(print_pomo)$(print_battery)$(print_date)"
+  sleep 1
 done
