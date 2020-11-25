@@ -20,7 +20,7 @@ print_battery() {
 # https://github.com/jsspencer/pomo
 print_pomo() {
   if command -v pomo > /dev/null 2>&1; then
-		printf " %s ·" $(pomo clock)
+		printf " %s ·" "$(pomo clock | sed 's/[[:alpha:]]/& /g')"
 	fi
 }
 
