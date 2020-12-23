@@ -5,7 +5,8 @@
 # additionally display its current state.
 
 print_date() {
-  date +" %a %d %b %Y · %H:%M"
+  #date +" %a %d %b %Y · %H:%M"
+  date +" %m/%d · %H:%M"
 }
 
 print_battery() {
@@ -20,7 +21,10 @@ print_battery() {
 # https://github.com/jsspencer/pomo
 print_pomo() {
   if command -v pomo > /dev/null 2>&1; then
-		printf " %s ·" "$(pomo clock | sed 's/[[:alpha:]]/& /g')"
+    pomostat=$(pomo clock)
+    if [ ! $pomostat = '--:--' ]; then
+			printf " %s ·" $(pomo clock)
+		fi
 	fi
 }
 
