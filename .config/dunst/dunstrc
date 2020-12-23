@@ -1,0 +1,26 @@
+[global]
+	geometry = "400x10-30+50"
+	font = Monospace 15
+	padding = 8
+	horizontal_padding = 8
+	frame_width = 4
+	frame_color = "#ad2007"
+	separator_color = frame
+	separator_height = 4
+	word_wrap = yes
+	format = "<b>%s</b>\n%b"
+
+[urgency_low]
+	background = "#000000"
+	foreground = "#ffffff"
+	timeout = 10
+
+[urgency_normal]
+	background = "#2c4e75"
+	foreground = "#ffffff"
+	timeout = 20
+
+[urgency_critical]
+	background = "#ad2007"
+	foreground = "#ffffff"
+	timeout = 0
