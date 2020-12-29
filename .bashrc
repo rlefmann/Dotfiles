@@ -100,16 +100,6 @@ ex ()
   fi
 }
 
-# cd to current directory when exiting nnn:
-export NNN_TMPFILE="/tmp/nnn"
-n()
-{
-	nnn "$@"
-	if [ -f $NNN_TMPFILE ]; then
-		. $NNN_TMPFILE
-		rm -f $NNN_TMPFILE > /dev/null
-	fi
-}
 
 # set the brightness of the primary display:
 brightness() {
