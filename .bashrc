@@ -29,13 +29,6 @@ alias vim=nvim
 alias yta='youtube-dl -x -f bestaudio/best'
 alias ytv='youtube-dl -f bestvideo+bestaudio'
 
-# git
-alias status='git status'
-alias add='git add'
-alias commit='git commit -m'
-alias pull='git pull'
-alias push='git push'
-
 alias xi="sudo xbps-install"
 alias xq="xbps-query -Rs"
 alias xr="sudo xbps-remove -R"
