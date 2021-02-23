@@ -14,13 +14,3 @@ map global normal <c-w> ':delete-buffer<ret>' -docstring 'delete buffer'
 hook global NormalKey y %{ nop %sh{
   printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
 }}
-
-# Force myself to stop using arrow keys:
-map global insert <left> ""
-map global insert <right> ""
-map global insert <up> ""
-map global insert <down> ""
-unmap global normal <left>
-unmap global normal <right>
-unmap global normal <up>
-unmap global normal <down>
