@@ -14,4 +14,6 @@ compinit
 
 bindkey '^R' history-incremental-search-backward
 
+[ -f "$HOME/.aliasrc" ] && source "$HOME/.aliasrc"
+
 PROMPT="%B%F{blue}%1~ %# %f%b"
