@@ -12,4 +12,6 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+bindkey '^R' history-incremental-search-backward
+
 PROMPT="%B%F{blue}%1~ %# %f%b"
