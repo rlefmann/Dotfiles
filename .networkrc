@@ -1,0 +1,26 @@
+# Names of wireless and etheret device:
+WIFI=wlp3s0
+ETHERNET=enp2s0
+
+if [ ! -z $WIFI ]; then
+	alias wifi_start="sudo ip link set up $WIFI"
+	alias wifi_stop="sudo ip link set down $WIFI"
+	alias wifi_scan="sudo iw dev $WIFI scan | grep SSID: | sed 's/^[ \t]*SSID: //; /^$/d' | sort | uniq"
+	alias wifi_disconnect="sudo killall wpa_supplicant"
+
+	wifi_connect ()
+	{
+		if [ -f "$1" ]; then
+			sudo wpa_supplicant -B -i "$WIFI" -c "$1";
+			sudo dhcpcd "$WIFI";
+		else
+			echo "'$1' is not a valid file"
+		fi
+	}
+fi
+
+# start and stop wired internet connection:
+if [ ! -z $ETHERNET ]; then
+	alias ethernet_start="sudo ip link set up $ETHERNET"
+	alias ethernet_stop="sudo ip link set down $ETHERNET"
+fi

@@ -12,7 +12,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-[ -f "$HOME/.aliasrc" ] && source "$HOME/.aliasrc"
+[ -f "$HOME/.aliasrc" ]   && source "$HOME/.aliasrc"
+[ -f "$HOME/.networkrc" ] && source "$HOME/.networkrc"
 
 bindkey '^R' history-incremental-search-backward
 
