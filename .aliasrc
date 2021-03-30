@@ -40,3 +40,10 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+
+
+# set the time and date from the internet:
+set-time-from-web ()
+{
+	sudo date -s "$(curl -s --head http://google.com | grep ^Date: | sed 's/Date: //g')"
+}

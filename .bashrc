@@ -61,14 +61,6 @@ fi
 alias sync_from_drive="rclone sync googledrive: ~/Drive"
 alias sync_to_drive="rclone sync ~/Drive googledrive:"
 
-alias set_time="sudo date +%T -s"
-
-# set the time and date from the internet:
-sync_time_from_web ()
-{
-	sudo date -s "$(curl -s --head http://google.com | grep ^Date: | sed 's/Date: //g')"
-}
-
 
 # set the brightness of the primary display:
 brightness() {
