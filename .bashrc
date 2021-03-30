@@ -9,31 +9,7 @@ ETHERNET=enp2s0
 
 use_color=true
 
-alias ..='cd ..'
-alias .2='cd ../..'
-alias .3='cd ../../..'
-alias .4='cd ../../../..'
-alias .5='cd ../../../../..'
-
-alias ls='ls --color=auto --group-directories-first'
-alias l='ls -1'
-alias ll="ls -lh"
-alias la="ls -lhA"
-alias rf="rm -rf"
-
-alias mv='mv -iv'
-alias cp='cp -riv'
-alias mkdir='mkdir -vp'
-
-alias vim=nvim
-alias yta='youtube-dl -x -f bestaudio/best'
-alias ytv='youtube-dl -f bestvideo+bestaudio'
-
-alias xi="sudo xbps-install"
-alias xq="xbps-query -Rs"
-alias xr="sudo xbps-remove -R"
-
-alias sdn="sudo shutdown -P now"
+[ -f $HOME/.aliasrc ] && source $HOME/.aliasrc
 
 if [ ! -z $WIFI ]; then
 	alias wifi_start="sudo ip link set up $WIFI"
