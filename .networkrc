@@ -8,7 +8,7 @@ if [ ! -z $WIFI ]; then
 	alias wifi-scan="sudo iw dev $WIFI scan | grep SSID: | sed 's/^[ \t]*SSID: //; /^$/d' | sort | uniq"
 	alias wifi-disconnect="sudo killall wpa_supplicant"
 
-	wifi_connect ()
+	wifi-connect ()
 	{
 		if [ -f "$1" ]; then
 			sudo wpa_supplicant -B -i "$WIFI" -c "$1";
