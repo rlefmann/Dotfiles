@@ -303,6 +303,25 @@
         <direction>down</direction>
       </action>
     </keybind>
+    <!-- Keybindings for window snapping -->
+		<keybind key="W-Left">
+		  <action name="UnmaximizeFull"/>
+		  <action name="MoveResizeTo">
+		    <width>50%</width>
+		    <height>100%</height>
+		    <x>0%</x>
+		    <y>0%</y>
+		  </action>
+		</keybind>
+		<keybind key="W-Right">
+		  <action name="UnmaximizeFull"/>
+		  <action name="MoveResizeTo">
+		    <width>50%</width>
+		    <height>100%</height>
+		    <x>50%</x>
+		    <y>0%</y>
+		  </action>
+		</keybind>
     <!-- Keybindings for running applications -->
     <keybind key="W-e">
       <action name="Execute">
