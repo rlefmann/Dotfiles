@@ -322,6 +322,14 @@
 		    <y>0%</y>
 		  </action>
 		</keybind>
+		<!-- Move window to the center of the screen -->
+		<keybind key="W-C">
+		  <action name="UnmaximizeFull"/>
+		  <action name="MoveResizeTo">
+		    <x>center</x>
+		    <y>center</y>
+		  </action>
+		</keybind>
     <!-- Keybindings for running applications -->
 		<keybind key="W-S-Return">
 		    <action name="Execute">
