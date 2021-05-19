@@ -330,6 +330,9 @@
 		    <y>center</y>
 		  </action>
 		</keybind>
+		<keybind key="W-M W-F">
+      <action name="ToggleMaximize"/>
+		</keybind>
     <!-- Keybindings for running applications -->
 		<keybind key="W-S-Return">
 		    <action name="Execute">
