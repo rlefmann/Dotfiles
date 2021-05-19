@@ -1,0 +1,2 @@
+polybar example &
+feh --bg-scale ~/System/wallpaper.png &
