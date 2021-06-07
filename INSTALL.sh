@@ -21,5 +21,7 @@ find . $findparams -exec cp "{}" "$HOME/{}" \;
 
 # Remove .bash_profile and add a symbolic link with the same name to .profile
 # This ensures that .profile is read by every bash instance
-rm -rf $HOME/.bash_profile
+# The same is done for .zprofile
+rm -rf $HOME/.bash_profile $HOME/.zprofile
 ln -s $HOME/.profile $HOME/.bash_profile
+ln -s $HOME/.profile $HOME/.zprofile
