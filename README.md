@@ -14,7 +14,7 @@ sh ./INSTALL.sh
 
 ## Software I use
 
-* Window manager: dwm
+* Window manager: openbox (previously: dwm)
 * Terminal: alacritty
 * Text editor: kakoune (previously: nvim)
 * PDF viewer: zathura
