@@ -1,2 +1,2 @@
-polybar example &
+tint2 &
 feh --bg-scale ~/System/wallpaper.png &
