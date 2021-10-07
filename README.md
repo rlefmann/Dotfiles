@@ -1,6 +1,8 @@
-# dotfiles
+# Dotfiles
 
 This repository contains my personal dotfiles.
+
+![Screenshot](screenshot.png)
 
 ## Installation
 
