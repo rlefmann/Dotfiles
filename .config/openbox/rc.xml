@@ -322,6 +322,51 @@
 		    <y>0%</y>
 		  </action>
 		</keybind>
+		<keybind key="W-Q">
+		  <action name="UnmaximizeFull"/>
+		  <action name="MoveResizeTo">
+		    <width>50%</width>
+		    <height>50%</height>
+		    <x>0%</x>
+		    <y>0%</y>
+		  </action>
+		</keybind>
+		<keybind key="W-W">
+		  <action name="UnmaximizeFull"/>
+		  <action name="MoveResizeTo">
+		    <width>50%</width>
+		    <height>50%</height>
+		    <x>50%</x>
+		    <y>0%</y>
+		  </action>
+		</keybind>
+		<keybind key="W-A">
+		  <action name="UnmaximizeFull"/>
+		  <action name="MoveResizeTo">
+		    <width>50%</width>
+		    <height>50%</height>
+		    <x>0%</x>
+		    <y>50%</y>
+		  </action>
+		</keybind>
+		<keybind key="W-S">
+		  <action name="UnmaximizeFull"/>
+		  <action name="MoveResizeTo">
+		    <width>50%</width>
+		    <height>50%</height>
+		    <x>50%</x>
+		    <y>50%</y>
+		  </action>
+		</keybind>
+		<keybind key="W-Q">
+		  <action name="UnmaximizeFull"/>
+		  <action name="MoveResizeTo">
+		    <width>50%</width>
+		    <height>50%</height>
+		    <x>0%</x>
+		    <y>0%</y>
+		  </action>
+		</keybind>
 		<!-- Move window to the center of the screen -->
 		<keybind key="W-C">
 		  <action name="UnmaximizeFull"/>
