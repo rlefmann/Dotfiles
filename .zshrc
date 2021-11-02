@@ -23,4 +23,13 @@ bindkey '^R' history-incremental-search-backward
 bindkey "\e[H" beginning-of-line
 bindkey "\e[F" end-of-line
 
+# Use Ctrl+Backspace to move up one level in the directory tree:
+updirectory() {
+	cd ..; zle reset-prompt;
+}
+zle -N updirectory
+bindkey '^\b' updirectory
+
+setopt promptsubst
 PROMPT="%B%F{blue}%1~ %# %f%b"
+PS1=$'${(r:$COLUMNS::\u2500:)}'$PS1
