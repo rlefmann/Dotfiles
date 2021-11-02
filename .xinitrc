@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # set keymap for german keyboard:
 setxkbmap -layout de -option caps:escape
 
@@ -14,8 +16,7 @@ udevil
 # set the background:
 xsetroot -solid "#111111"
 
-[ -f $HOME/.local/bin/dwmstatus ] && sh ~/.local/bin/dwmstatus &
-exec dwm
+exec openbox-session
 
 # restore ALSA settings:
 ALSAFILE="/home/lefmann/.config/asound.state"
