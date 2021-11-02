@@ -10,6 +10,14 @@ xmodmap -e "keycode 104 = braceright"
 
 udevil
 
+# Shutdown computer at 11pm and prohibit it from
+# starting between 10pm and 5am
+shutdown -P 23:00 &
+time=$(date '+%H')
+if [ "$time" -gt 22 ] || [ "$time" -lt 5 ]; then
+	shutdown now
+fi
+
 # read .Xresources:
 [ -f $HOME/.Xresources ] && xrdb $HOME/.Xresources
 
