@@ -1,2 +1,2 @@
 tint2 &
-feh --bg-scale ~/System/wallpaper.png &
+xsetroot -solid "#101a26" &
