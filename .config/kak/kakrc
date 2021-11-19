@@ -6,8 +6,8 @@ set global tabstop 2
 set global indentwidth 0
 
 map global normal D <a-x>d -docstring 'delete line'
-map global user '#' ':comment-line<ret>' -docstring 'comment line'
-map global user 'w' ':add-highlighter global/ show-whitespaces<ret>' -docstring 'show whitespaces'
+map global normal '#' ':comment-line<ret>' -docstring 'comment line'
+
 map global normal <tab> ':bn<ret>' -docstring 'switch to the next buffer'
 map global normal <s-tab> ':bp<ret>' -docstring 'switch to the previous buffer'
 map global normal <c-w> ':delete-buffer<ret>' -docstring 'delete buffer'
