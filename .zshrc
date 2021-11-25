@@ -18,7 +18,7 @@ compinit
 bindkey '^R' history-incremental-search-backward
 
 # fzf history search when typing ctrl+r:
-[ -f /usr/share/doc/fzf/key-bindings.zsh ] && source /usr/share/doc/fzf/key-bindings.zsh
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 
 bindkey "\e[H" beginning-of-line
 bindkey "\e[F" end-of-line
