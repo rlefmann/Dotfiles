@@ -12,9 +12,11 @@ alias vim=nvim
 alias yta='youtube-dl -x -f bestaudio/best'
 alias ytv='youtube-dl -f bestvideo+bestaudio'
 
-alias xi="sudo xbps-install"
-alias xq="xbps-query -Rs"
-alias xr="sudo xbps-remove -R"
+if command -v xbps-install &> /dev/null; then
+	alias xi='sudo xbps-install'
+	alias xq='xbps-query -Rs'
+	alias xr='sudo xbps-remove -R'
+fi
 
 alias sdn="sudo shutdown -P now"
 
