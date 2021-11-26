@@ -8,8 +8,7 @@ set global indentwidth 0
 map global normal D <a-x>d -docstring 'delete line'
 map global normal '#' ':comment-line<ret>' -docstring 'comment line'
 
-map global normal <tab> ':bn<ret>' -docstring 'switch to the next buffer'
-map global normal <s-tab> ':bp<ret>' -docstring 'switch to the previous buffer'
+map global normal <tab> ':b ' -docstring 'switch buffer'
 map global normal <c-w> ':delete-buffer<ret>' -docstring 'delete buffer'
 
 hook global NormalKey y %{ nop %sh{
