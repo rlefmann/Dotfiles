@@ -11,9 +11,12 @@ map global normal '#' ':comment-line<ret>' -docstring 'comment line'
 map global normal <tab> ':b ' -docstring 'switch buffer'
 map global normal <c-w> ':delete-buffer<ret>' -docstring 'delete buffer'
 
-hook global NormalKey y %{ nop %sh{
-  printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
-}}
+# hook global NormalKey y %{ nop %sh{
+#   printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
+# }}
+
+map global user y '<a-|>xsel --input --clipboard<ret>:echo "yanked to clipboard"<ret>'
+map global user p '<a-!>xsel --output --clipboard<ret>:echo "pasted from clipboard"<ret>'
 
 hook global WinSetOption filetype=julia %{
     map window insert <a-a> α
