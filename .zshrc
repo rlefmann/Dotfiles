@@ -19,7 +19,8 @@ bindkey '^R' history-incremental-search-backward
 
 # fzf history search when typing ctrl+r:
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
-
+# Use the home key to go to the beginning of the line (alternative: ctrl+a)
+# and the end key to go to the end of the line (alternative: ctrl+e)
 bindkey "\e[H" beginning-of-line
 bindkey "\e[F" end-of-line
 
@@ -32,4 +33,6 @@ bindkey '^\b' updirectory
 
 setopt promptsubst
 PROMPT="%B%F{blue}%1~ %# %f%b"
-PS1=$'${(r:$COLUMNS::\u2500:)}'$PS1
+RPROMPT="%F{008}%n@%m %t%f"
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
