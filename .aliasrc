@@ -9,8 +9,8 @@ alias cp='cp -riv'
 alias mkdir='mkdir -vp'
 
 alias vim=nvim
-alias yta='youtube-dl -x -f bestaudio/best'
-alias ytv='youtube-dl -f bestvideo+bestaudio'
+alias yta='yt-dlp -x -f bestaudio/best'
+alias ytv='yt-dlp -f bestvideo+bestaudio'
 
 if command -v xbps-install &> /dev/null; then
 	alias xi='sudo xbps-install'
@@ -48,4 +48,20 @@ ex ()
 set-time-from-web ()
 {
 	sudo date -s "$(curl -s --head http://google.com | grep ^Date: | sed 's/Date: //g')"
+}
+
+
+ytblock () {
+	sudo tee -a /etc/hosts > /dev/null <<EOT
+127.0.0.1 www.youtube.com
+127.0.0.1 youtube.com
+127.0.0.1 www.youtu.be
+127.0.0.1 youtu.be
+127.0.0.1 www.youtube-nocookie.com
+127.0.0.1 youtube-nocookie.com
+EOT
+}
+
+ytunblock () {
+	sudo sed -i '/^.*youtu.*$/d' /etc/hosts
 }
