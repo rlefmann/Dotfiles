@@ -1,0 +1,32 @@
+#!/bin/sh
+# Find files with the same name and/or filesize.
+
+if [ $# -ne 2 ]; then
+	progname=$(basename "$0")
+	echo "Usage: $progname FILE DIR" 1>&2
+	exit 1
+elif [ ! -f "$1" ]; then
+	echo "Error: \`$1\` is not a file" 1>&2
+	exit 1
+elif [ ! -d "$2" ]; then
+	echo "Error: \`$2\` is not a directory" 1>&2
+	exit 1
+fi
+
+filename=$(basename "$1")
+filesize=$(du -b "$1" | cut -f1)
+res=$(find "$2" -type f -name "$filename" -size "$filesize"c)
+if [ ! -z "$res" ]; then
+	echo "Same name and filesize:"
+	echo "$res"
+fi
+res=$(find "$2" -type f -name "$filename" ! -size "$filesize"c)
+if [ ! -z "$res" ]; then
+	echo "Same name but different filesize:"
+	echo "$res"
+fi
+res=$(find "$2" -type f ! -name "$filename" -size "$filesize"c)
+if [ ! -z "$res" ]; then
+	echo "Different name but same filesize:"
+	echo "$res"
+fi
