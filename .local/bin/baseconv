@@ -1,0 +1,11 @@
+#!/bin/sh
+# Base conversion of a number
+
+if [ $# -ne 3 ]; then
+	echo "Usage: $0 INBASE OUTBASE NUMBER" 1>&2
+	echo "  INBASE:  base of the input  number" 1>&2
+	echo "  OUTBASE: base of the output number" 1>&2
+	exit 1
+fi
+number=$(echo "$3" | tr '[a-z]' '[A-Z]')
+echo "obase=$2;ibase=$1;$number" | bc
