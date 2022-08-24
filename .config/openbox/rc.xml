@@ -375,6 +375,16 @@
         <y>center</y>
       </action>
     </keybind>
+    <!-- Move window to the center of the screen and scale to 85% -->
+    <keybind key="W-S-C">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>center</x>
+        <y>center</y>
+        <width>85%</width>
+        <height>85%</height>
+      </action>
+    </keybind>
     <keybind key="W-M W-F">
       <action name="ToggleMaximize"/>
     </keybind>
