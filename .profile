@@ -6,7 +6,7 @@ export TERMINAL="alacritty"
 export VISUAL="kak"
 export EDITOR="kak"
 export READER="zathura"
-export BROWSER="vimb"
+export BROWSER="chromium"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
