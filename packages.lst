@@ -2,6 +2,7 @@ alacritty
 alsa-utils
 curl
 dmenu
+dunst
 ffmpeg
 git
 htop
@@ -15,9 +16,11 @@ tint2
 tree
 ttf-ubuntu-font-family
 udevil
+void-docs
 xf86-video-intel
 xorg-fonts
 xorg-minimal
+xrandr
 xrdb
 xsel
 xsetroot
