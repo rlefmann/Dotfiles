@@ -8,7 +8,20 @@ font:
   offset:
     y: 2
 
-colors:
-  primary:
-    foreground: '0xeaeaea'
-    background: '0x222222'
+schemes:
+  dark: &dark
+    primary:
+      foreground: '0xeaeaea'
+      background: '0x222222'
+  light: &light
+    primary:
+      background: '0xf7f7f7'
+      foreground: '0x121212'
+    normal:
+      green: '0x578c57'
+      blue: '0x314e73'
+      red: '0x852c2c'
+      cyan: '0x316b73'
+      magenta: '0x702c85'
+      yellow: '0xe88d15'
+colors: *dark
