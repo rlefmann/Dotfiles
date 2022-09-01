@@ -1,0 +1,25 @@
+#!/bin/sh
+set -e
+
+# Switches the alacritty colorscheme from dark to light and vice versa
+# Requires a alacritty.yml in which the two themes "dark" and "light"
+# are defined. Example:
+# schemes:
+#   dark: &dark
+#     primary:
+#       foreground: '0xeaeaea'
+#       background: '0x222222'
+#   light: &light
+#     primary:
+#       background: '0xf7f7f7'
+#       foreground: '0x121212'
+# colors: *dark
+
+config="$XDG_CONFIG_HOME/alacritty/alacritty.yml"
+
+if grep 'colors: \*light' "$config" > /dev/null
+then	
+	sed -i "/^colors:/s/\*.*$/\*dark/" "$config"
+else
+	sed -i "/^colors:/s/\*.*$/\*light/" "$config"
+fi
