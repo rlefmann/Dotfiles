@@ -40,3 +40,5 @@ hook global WinSetOption filetype=julia %{
     map window insert <a-z> ζ
     map window insert <a-=> ≈
 }
+
+set-face global MatchingChar black,red+b
