@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # set keymap for german keyboard:
-setxkbmap -layout de -option caps:escape
+setxkbmap -layout de -option caps:escape -variant "nodeadkeys"
 
 # remap numpad keys for easier access to backslash and left and right braces:
 xmodmap -e "keycode 90 = backslash"
