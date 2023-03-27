@@ -16,10 +16,10 @@ sh ./INSTALL.sh
 
 ## Software I use
 
-* Window manager: openbox (previously: dwm)
+* Window manager: openbox
 * Panel/status bar: tint2
 * Terminal: alacritty
-* Text editor: kakoune (previously: nvim)
+* Text editor: kakoune
 * PDF viewer: zathura
 * Image viewer: sxiv
 * Web browser: vimb
