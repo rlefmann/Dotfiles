@@ -313,6 +313,24 @@
         <y>0%</y>
       </action>
     </keybind>
+    <keybind key="W-S-W">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <width>66%</width>
+        <height>100%</height>
+        <x>0%</x>
+        <y>0%</y>
+      </action>
+    </keybind>
+    <keybind key="W-S-S">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <width>33%</width>
+        <height>100%</height>
+        <x>66%</x>
+        <y>0%</y>
+      </action>
+    </keybind>
     <keybind key="W-Right">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">

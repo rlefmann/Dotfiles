@@ -17,6 +17,7 @@ map global normal <c-w> ':delete-buffer<ret>' -docstring 'delete buffer'
 
 map global user y '<a-|>xsel --input --clipboard<ret>:echo "yanked to clipboard"<ret>'
 map global user p '<a-!>xsel --output --clipboard<ret>:echo "pasted from clipboard"<ret>'
+map global user r '<a-|>sh<ret>:echo "run in shell"<ret>'
 
 hook global WinSetOption filetype=julia %{
     map window insert <a-a> α
@@ -43,3 +44,5 @@ hook global WinSetOption filetype=julia %{
     map global user j ':repl-send-text<ret>'
     map global user J ':repl-new julia<ret>'
 }
+
+set-face global MatchingChar black,green+b
