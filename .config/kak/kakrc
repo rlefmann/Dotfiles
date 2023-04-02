@@ -39,4 +39,5 @@ hook global WinSetOption filetype=julia %{
     map window insert <a-x> ξ
     map window insert <a-z> ζ
     map window insert <a-=> ≈
+    map window insert <a-s-l> ℓ
 }
