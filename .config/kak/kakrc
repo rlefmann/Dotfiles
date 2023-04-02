@@ -40,4 +40,6 @@ hook global WinSetOption filetype=julia %{
     map window insert <a-z> ζ
     map window insert <a-=> ≈
     map window insert <a-s-l> ℓ
+    map global user j ':repl-send-text<ret>'
+    map global user J ':repl-new julia<ret>'
 }
