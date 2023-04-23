@@ -8,6 +8,9 @@ alias mv='mv -iv'
 alias cp='cp -riv'
 alias mkdir='mkdir -vp'
 
+alias cal='cal -m'
+alias grep='grep --color'
+
 alias vim=nvim
 alias yta='yt-dlp -x -f bestaudio/best'
 alias ytv='yt-dlp -f bestvideo+bestaudio'
