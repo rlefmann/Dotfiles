@@ -1,11 +1,15 @@
-add-highlighter global/ number-lines
+add-highlighter global/ number-lines -hlcursor
 add-highlighter global/ wrap -word -width 80
 add-highlighter global/ show-matching
 
 set global tabstop 2
 set global indentwidth 0
 
-map global normal D <a-x>d -docstring 'delete line'
+set-option global ui_options terminal_assistant=none
+
+map global normal <esc> ";," -docstring 'clear highlighted text and remove multiple cursors'
+
+map global normal D xd -docstring 'delete line'
 map global normal '#' ':comment-line<ret>' -docstring 'comment line'
 
 map global normal <tab> ':b ' -docstring 'switch buffer'
@@ -15,9 +19,9 @@ map global normal <c-w> ':delete-buffer<ret>' -docstring 'delete buffer'
 #   printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
 # }}
 
-map global user y '<a-|>xsel --input --clipboard<ret>:echo "yanked to clipboard"<ret>'
-map global user p '<a-!>xsel --output --clipboard<ret>:echo "pasted from clipboard"<ret>'
-map global user r '<a-|>sh<ret>:echo "run in shell"<ret>'
+map global user y '<a-|>xsel --input --clipboard<ret>:echo "yanked to clipboard"<ret>' -docstring 'yank to clipboard'
+map global user p '<a-!>xsel --output --clipboard<ret>:echo "pasted from clipboard"<ret>' -docstring 'paste from clipboard'
+map global user r '<a-|>sh<ret>:echo "run in shell"<ret>' -docstring 'run selection in shell'
 
 hook global WinSetOption filetype=julia %{
     map window insert <a-a> α
