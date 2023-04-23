@@ -1,0 +1,6 @@
+#!/bin/sh
+# Search for a pdf file in home directory and open it in zathura.
+
+pdf=$(find ~ -type f -name "*.pdf" | fzf)
+[ -z $pdf ] && exit
+zathura "$pdf" &
