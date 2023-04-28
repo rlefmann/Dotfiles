@@ -5,3 +5,7 @@ image/x-portable-greymap=img.desktop
 image/png=img.desktop
 image/jpeg=img.desktop
 application/pdf=pdf.desktop
+text/html=browser.desktop
+text/xml=browser.desktop
+x-scheme-handler/http=browser.desktop
+x-scheme-handler/https=browser.desktop
