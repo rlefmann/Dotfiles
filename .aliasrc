@@ -1,4 +1,4 @@
-alias ls='ls --color=auto --group-directories-first --quoting-style=literal'
+alias ls='ls --color=auto --time-style=long-iso --group-directories-first --quoting-style=literal'
 alias l='ls -1'
 alias ll="ls -lh"
 alias la="ls -lhA"
