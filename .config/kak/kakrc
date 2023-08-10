@@ -45,6 +45,7 @@ hook global WinSetOption filetype=julia %{
     map window insert <a-z> ζ
     map window insert <a-=> ≈
     map window insert <a-s-l> ℓ
+    map window insert <a-s-p> ∂
     map global user j ':repl-send-text<ret>'
     map global user J ':repl-new julia<ret>'
     map global user h '<a-!>tac ~/.julia/logs/repl_history.jl | sed "/^#/Q; s/^\t//" | tac<ret>' -docstring 'paste last element from julia history'
