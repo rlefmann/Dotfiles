@@ -33,7 +33,7 @@ CHOICE=$(printf "Audio\\nLow quality video\\nMedium quality video\\nHigh quality
 FILENAME_TEMPLATE="%(channel)s-%(upload_date>%Y-%m-%d)s-%(title)s.%(ext)s"
 
 case "$CHOICE" in
-    "Audio only")
+    "Audio")
         yt-dlp -x -o "$FILENAME_TEMPLATE" "$URL"
         ;;
     High*)
