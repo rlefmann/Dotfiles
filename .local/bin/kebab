@@ -1,0 +1,37 @@
+#!/bin/bash
+# Usage: ./kebab filename
+
+file="$1"
+
+# Extract base name and extension
+base="${file%.*}"
+ext="${file##*.}"
+
+# If no extension (file without dot), handle gracefully
+if [[ "$base" == "$file" ]]; then
+    ext=""
+fi
+
+# Transform base:
+# - lowercase
+# - replace non-alphanumeric with dashes
+# - collapse multiple dashes
+# - strip leading/trailing dashes
+kebab=$(echo "$base" | \
+    tr '[:upper:]' '[:lower:]' | \
+    sed -E 's/[^a-z0-9]+/-/g; s/^-+//; s/-+$//')
+
+# Construct new name
+if [[ -n "$ext" && "$ext" != "$file" ]]; then
+    new="${kebab}.${ext,,}"  # ,, ensures lowercase extension
+else
+    new="$kebab"
+fi
+
+# Rename file if name changed
+if [[ "$file" != "$new" ]]; then
+    mv -- "$file" "$new"
+    echo "Renamed: $file -> $new"
+else
+    echo "Already kebab-case: $file"
+fi

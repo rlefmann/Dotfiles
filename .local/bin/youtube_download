@@ -1,0 +1,52 @@
+#!/bin/sh
+# Download a YouTube video or audio using yt-dlp.
+# URL is taken from the clipboard, format is selected via dmenu,
+# and the output file is auto-renamed (date, lowercase, dashes).
+
+URL=$(xsel --clipboard --output)
+if [ -z "$URL" ]; then
+    echo "Error: Clipboard is empty or does not contain a URL."
+    exit 1
+fi
+
+if ! echo "$URL" | grep -q "youtu"; then
+    echo "Error: Clipboard does not appear to contain a YouTube URL."
+    exit 1
+fi
+
+# Extract video code (supports both youtube.com and youtu.be links)
+VIDEO_ID=$(echo "$URL" | sed -n 's/.*v=\([^&]*\).*/\1/p')
+if [ -z "$VIDEO_ID" ]; then
+    VIDEO_ID=$(echo "$URL" | sed -n 's#.*/youtu\.be/\([^?&/]*\).*#\1#p')
+fi
+
+if [ -n "$VIDEO_ID" ]; then
+    PROMPT="Download $VIDEO_ID as:"
+else
+    PROMPT="Download as:"
+fi
+
+CHOICE=$(printf "Audio\\nLow quality video\\nMedium quality video\\nHigh quality video" | dmenu -l 20 -p "$PROMPT")
+
+[ -z "$CHOICE" ] && exit 0
+
+FILENAME_TEMPLATE="%(channel)s-%(upload_date>%Y-%m-%d)s-%(title)s.%(ext)s"
+
+case "$CHOICE" in
+    "Audio only")
+        yt-dlp -x -o "$FILENAME_TEMPLATE" "$URL"
+        ;;
+    High*)
+        yt-dlp -f "bestvideo+bestaudio/best"  -o "$FILENAME_TEMPLATE" "$URL"
+        ;;
+    Medium*)
+        yt-dlp -f "bestvideo[height<=480]+bestaudio/best[height<=480]"  -o "$FILENAME_TEMPLATE" "$URL"
+        ;;
+    Low*)
+        yt-dlp -f "bestvideo[height<=360]+bestaudio/best[height<=360]"  -o "$FILENAME_TEMPLATE" "$URL"
+        ;;
+    *)
+        echo "Invalid choice."
+        exit 1
+        ;;
+esac
