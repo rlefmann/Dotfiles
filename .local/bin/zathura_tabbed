@@ -1,0 +1,19 @@
+#!/bin/sh
+# Run multiple Zathura instances inside a single suckless tabbed window.
+# If a tabbed instance already exists, new PDFs are opened as tabs.
+# Otherwise, a new tabbed window is created automatically.
+
+XIDFILE="/tmp/zathura-tabbed.xid"
+
+if [ -f "$XIDFILE" ]; then
+    XID=$(cat "$XIDFILE")
+
+    if xprop -id "$XID" >/dev/null 2>&1; then
+        zathura -e "$XID" "$@"
+        exit
+    fi
+fi
+
+XID=$(tabbed -d -c)
+echo "$XID" > "$XIDFILE"
+zathura -e "$XID" "$@"
